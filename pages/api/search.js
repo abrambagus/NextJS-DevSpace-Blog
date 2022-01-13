@@ -7,7 +7,8 @@ export default (req, res) => {
 
   // eslint-disable-next-line no-undef
   if (process.env.NODE_ENV === 'production') {
-    console.log('cache');
+    // eslint-disable-next-line no-undef
+    posts = require('../../cache/data').posts;
   } else {
     const files = fs.readdirSync(path.join('posts'));
 
